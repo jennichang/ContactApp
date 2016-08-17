@@ -15,19 +15,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText textName;
     EditText textPhone;
     Button addButton;
+    // create variables for each of the controls
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        list = (ListView) findViewById(R.id.listView);
+        list = (ListView) findViewById(R.id.listView); // connect variables to views
         textName = (EditText) findViewById(R.id.editText);
         textPhone = (EditText) findViewById(R.id.editText2);
         addButton = (Button) findViewById(R.id.button);
 
         contacts = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-        list.setAdapter(contacts);
+        list.setAdapter(contacts); // connect listview
 
         addButton.setOnClickListener(this);
         list.setOnItemLongClickListener(this);
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         String item = textName.getText().toString() + " " + textPhone.getText().toString();
+        // put name and phone together
         contacts.add(item);
         textName.setText("");
         textPhone.setText("");
