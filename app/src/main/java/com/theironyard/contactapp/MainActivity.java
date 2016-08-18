@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         String name = textName.getText().toString();
         String phone = textPhone.getText().toString();
-        String item = textName.getText().toString() + " (" + textPhone.getText().toString() + ")";
+        String item = name + " (" + phone + ")";
         // put name and phone together
         if(!name.equals("") && !phone.equals("")) {
             contacts.add(item);
