@@ -36,9 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        String name = textName.getText().toString();
+        String phone = textPhone.getText().toString();
         String item = textName.getText().toString() + " (" + textPhone.getText().toString() + ")";
         // put name and phone together
-        contacts.add(item);
+        if(!name.equals("") && !phone.equals("")) {
+            contacts.add(item);
+        }
         textName.setText("");
         textPhone.setText("");
     }
